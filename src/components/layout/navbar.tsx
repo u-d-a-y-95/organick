@@ -7,7 +7,7 @@ const navs = [
   },
   {
     label: "Shop",
-    url: "/",
+    url: "/shop",
   },
   {
     label: "Pages",
