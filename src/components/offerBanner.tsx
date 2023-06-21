@@ -19,7 +19,7 @@ export default function OfferBanner({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="h-[200px] w-[350px] rounded-lg flex items-center p-8"
+      className="h-[200px] w-[400px] rounded-lg flex items-center p-8"
     >
       <div className={`text-${color} w-1/2`}>
         <h5 className={`${yellowtail.className}`}>{subTitle}</h5>

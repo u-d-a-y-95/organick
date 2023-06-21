@@ -29,7 +29,7 @@ export default function Home() {
         </div>
       </div>
       {/* offer banner */}
-      <div>
+      <div className=" h-[350px] flex justify-center items-center gap-10">
         <OfferBanner
           src="/img/offer-banner-1.png"
           title="Get Garden Fresh Fruits"
