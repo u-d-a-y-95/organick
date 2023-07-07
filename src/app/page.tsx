@@ -1,4 +1,5 @@
 import Button from "@/components/button";
+import NewsLetter from "@/components/news-letter";
 import OfferBanner from "@/components/offer-banner";
 import ProductCard from "@/components/product-card";
 import TestimonialRoundCard from "@/components/testimonial-round-card";
@@ -33,6 +34,32 @@ const products = [
     url: "/img/category-1.png",
     price: 20,
   },
+  {
+    name: "Calabrese Broccoli",
+    categoryName: "Vegetables",
+    url: "/img/category-1.png",
+    price: 20,
+  },
+  {
+    name: "Calabrese Broccoli",
+    categoryName: "Vegetables",
+    url: "/img/category-1.png",
+    price: 20,
+  },
+  {
+    name: "Calabrese Broccoli",
+    categoryName: "Vegetables",
+    url: "/img/category-1.png",
+    price: 20,
+  },
+  {
+    name: "Calabrese Broccoli",
+    categoryName: "Vegetables",
+    url: "/img/category-1.png",
+    price: 20,
+  },
+];
+const products1 = [
   {
     name: "Calabrese Broccoli",
     categoryName: "Vegetables",
@@ -122,7 +149,7 @@ on Vegetables"
           </h2>
           <p className="text-primary-dark text-sm font-thin my-3">
             Simply dummy text of the printing and typesetting industry. Lorem
-            had ceased to been the industry's standard dummy text ever since the
+            had ceased to been the industrys standard dummy text ever since the
             1500s, when an unknown printer took a galley.
           </p>
           <div className="my-5 flex flex-col gap-4">
@@ -214,6 +241,78 @@ on Vegetables"
           <TestimonialRoundCard title="350+" subtitle="Organic Orchads" />
           <TestimonialRoundCard title="25+" subtitle="Years of Farming" />
         </div>
+      </div>
+
+      <div className="bg-primary">
+        <div className="container mx-auto py-20 px-5">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div>
+              <h3 className={`${yellowtail.className} text-secondary text-xlx`}>
+                Offer
+              </h3>
+              <h2 className="text-white text-4xl font-extrabold mt-2">
+                We Offer Organic For You
+              </h2>
+            </div>
+            <div className="mt-8">
+              <Button label="View All Products" className="" />
+            </div>
+          </div>
+          <div className="px-5 sm:px-0 container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 sm:gap-7 my-20">
+            {products1.map((product, index) => (
+              <ProductCard key={index} {...product} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full h-[600px]">
+        <div className="hidden sm:block relative flex-1">
+          <Image src="/img/home-bg-2.png" alt="banner" fill={true} />
+        </div>
+        <div className="flex-1 relative self-center md:self-auto">
+          <div className="w-full rounded-lg p-10 bg-white md:absolute md:-left-12 md:top-1/2 md:-translate-y-1/2 md:w-3/4 xl:w-1/2">
+            <span className={`${yellowtail.className} text-secondary text-2xl`}>
+              Eco Friendly
+            </span>
+            <h4 className="text-3xl font-extrabold">
+              Econis is a Friendly Organic Store
+            </h4>
+            <div className="flex flex-col gap-5 my-5">
+              <div>
+                <h5 className="text-sm font-semibold">
+                  Start with Our Company First
+                </h5>
+                <p className="text-[10px]">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                  accusantium doloremque laudantium. Sed ut perspiciatis.
+                </p>
+              </div>
+              <div>
+                <h5 className="text-sm font-semibold">
+                  Learn How to Grow Yourself
+                </h5>
+                <p className="text-[10px]">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                  accusantium doloremque laudantium
+                </p>
+              </div>
+              <div>
+                <h5 className="text-sm font-semibold">
+                  Farming Strategies of Today
+                </h5>
+                <p className="text-[10px]">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                  accusantium doloremque laudantium. Sed ut perspiciatis.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[#F1F8F4] h-[500px]"></div>
+      {/* news letter */}
+      <div className="container mx-auto my-20">
+        <NewsLetter />
       </div>
     </>
   );
