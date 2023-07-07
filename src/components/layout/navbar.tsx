@@ -23,7 +23,7 @@ const navs = [
   },
   {
     label: "About",
-    url: "/",
+    url: "/about",
   },
 ];
 

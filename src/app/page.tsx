@@ -1,9 +1,9 @@
 import Button from "@/components/button";
 import NewsLetter from "@/components/news-letter";
 import OfferBanner from "@/components/offer-banner";
+import OfferCard from "@/components/offer-card";
 import ProductCard from "@/components/product-card";
 import TestimonialRoundCard from "@/components/testimonial-round-card";
-import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Yellowtail } from "next/font/google";
 import Image from "next/image";
 
@@ -59,32 +59,6 @@ const products = [
     price: 20,
   },
 ];
-const products1 = [
-  {
-    name: "Calabrese Broccoli",
-    categoryName: "Vegetables",
-    url: "/img/category-1.png",
-    price: 20,
-  },
-  {
-    name: "Calabrese Broccoli",
-    categoryName: "Vegetables",
-    url: "/img/category-1.png",
-    price: 20,
-  },
-  {
-    name: "Calabrese Broccoli",
-    categoryName: "Vegetables",
-    url: "/img/category-1.png",
-    price: 20,
-  },
-  {
-    name: "Calabrese Broccoli",
-    categoryName: "Vegetables",
-    url: "/img/category-1.png",
-    price: 20,
-  },
-];
 
 export default function Home() {
   return (
@@ -115,13 +89,13 @@ export default function Home() {
       </div>
       {/* offer banner */}
       <div className="my-16 py-10 flex flex-col md:flex-row justify-center items-center gap-10">
-        <OfferBanner
+        <OfferCard
           src="/img/offer-banner-1.png"
           title="Get Garden Fresh Fruits"
           subTitle="Natural!!"
           color="white"
         />
-        <OfferBanner
+        <OfferCard
           src="/img/offer-banner-2.png"
           title="Get 10% off
 on Vegetables"
@@ -243,28 +217,7 @@ on Vegetables"
         </div>
       </div>
 
-      <div className="bg-primary">
-        <div className="container mx-auto py-20 px-5">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div>
-              <h3 className={`${yellowtail.className} text-secondary text-xlx`}>
-                Offer
-              </h3>
-              <h2 className="text-white text-4xl font-extrabold mt-2">
-                We Offer Organic For You
-              </h2>
-            </div>
-            <div className="mt-8">
-              <Button label="View All Products" className="" />
-            </div>
-          </div>
-          <div className="px-5 sm:px-0 container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 sm:gap-7 my-20">
-            {products1.map((product, index) => (
-              <ProductCard key={index} {...product} />
-            ))}
-          </div>
-        </div>
-      </div>
+      <OfferBanner />
       <div className="flex w-full h-[600px]">
         <div className="hidden sm:block relative flex-1">
           <Image src="/img/home-bg-2.png" alt="banner" fill={true} />

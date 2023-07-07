@@ -6,7 +6,7 @@ export default function NewsLetter() {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="flex flex-col md:flex-row gap-5 rounded-lg justify-around items-center p-10 md:min-h-[250px]"
+      className="flex flex-col md:flex-row gap-5 rounded-lg justify-center sm:justify-around items-center p-10 min-h-[250px]"
     >
       <div>
         <h3 className="text-3xl font-bold text-white md:max-w-[230px]">
