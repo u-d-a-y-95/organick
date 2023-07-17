@@ -67,7 +67,33 @@ export default function Shop() {
         <h2 className="text-4xl font-bold">Shop</h2>
       </div>
       <div className="flex flex-col sm:flex-row container mx-auto py-10">
-        <div className="min-w-[250px] border-r"></div>
+        <div className="min-w-[250px] border-r px-10">
+          <div className="text-xl font-semibold ">Filter</div>
+
+          <div className="mt-10 flex flex-col gap-6">
+            <div>
+              <p className="font-semibold mb-2">Price</p>
+              <input className="border p-2" placeholder="enter price"/>
+            </div>
+            <div className="font-semibold mb-2">
+            <p className="font-semibold mb-2">Categpries</p>
+              <div>
+                <div className="flex items-center">
+                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="fruits"/>
+                  <label className="ml-2 font-medium" htmlFor="fruits">Fruits</label>
+               </div>
+                <div className="flex items-center">
+                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="vegetables"/>
+                  <label className="ml-2 font-medium" htmlFor="vegetables">Vegetables</label>
+               </div>
+                <div className="flex items-center">
+                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="nuts"/>
+                  <label className="ml-2 font-medium" htmlFor="nuts">Nuts</label>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="flex-1 pl-10">
           <div>
             <div className="flex items-stretch">
