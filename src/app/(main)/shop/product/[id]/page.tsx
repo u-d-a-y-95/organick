@@ -50,7 +50,7 @@ export default function Product() {
         </div>
       </div>
       <div className="container mx-auto my-20">
-        <FeatureProductBanner />
+        <FeatureProductBanner title="Related Products" />
       </div>
       <OfferBanner />
       <div className="container mx-auto my-20">
