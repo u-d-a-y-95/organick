@@ -72,7 +72,7 @@ export default function SignIn() {
               )}
             </div>
           </div>
-          <div className="mt-5 flex justify-between items-center">
+          <div className="mt-5 flex flex-col sm:flex-row justify-between sm:items-center gap-5">
             <div>
               <p>
                 Don&apos;t have an account?{" "}

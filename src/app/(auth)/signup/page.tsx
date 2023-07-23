@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/modal";
+import { Otp } from "@/components/otp";
 import {
   SigninFormDefaultValues,
   SignupForm,
@@ -8,6 +10,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function SignIn() {
@@ -19,6 +22,7 @@ export default function SignIn() {
     defaultValues: SigninFormDefaultValues,
     resolver: zodResolver(SignupFormSchema),
   });
+  const [modal, setModal] = useState(true);
   const submitHandler = (data: SignupForm) => {};
   return (
     <div className="flex  text-primary ">
@@ -99,7 +103,7 @@ export default function SignIn() {
               )}
             </div>
           </div>
-          <div className="mt-5 flex justify-between items-center">
+          <div className="mt-5 flex flex-col sm:flex-row justify-between sm:items-center gap-5">
             <div>
               <p>
                 already have an account?{" "}
@@ -114,6 +118,15 @@ export default function SignIn() {
           </div>
         </form>
       </div>
+      <Modal
+        backdrop
+        opended={modal}
+        close={() => {
+          setModal(false);
+        }}
+      >
+        <Otp />
+      </Modal>
     </div>
   );
 }
