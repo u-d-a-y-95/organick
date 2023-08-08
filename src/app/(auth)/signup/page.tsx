@@ -22,7 +22,7 @@ export default function SignIn() {
     defaultValues: SigninFormDefaultValues,
     resolver: zodResolver(SignupFormSchema),
   });
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const submitHandler = (data: SignupForm) => {};
   return (
     <div className="flex  text-primary ">

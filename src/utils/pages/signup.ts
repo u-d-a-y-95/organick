@@ -10,7 +10,7 @@ export const SigninFormDefaultValues = {
 
 export const SignupFormSchema = z
   .object({
-    name: z.string().min(1),
+    name: z.string().optional(),
     email: z.string().email().optional().or(z.literal("")),
     mobile: z.string().min(11, "enter a valid mobile number"),
     password: z.string().min(6, "enter at least 6 charecters"),

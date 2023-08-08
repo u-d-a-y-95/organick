@@ -29,12 +29,12 @@ export default function SignIn() {
     console.log(data);
   };
   return (
-    <div className="flex  text-primary ">
-      <div className="hidden lg:block relative w-[600px] h-[600px] ">
+    <div className="container mx-auto flex text-primary w-full p-5 sm:p-10 justify-center items-center" >
+      <div className="hidden lg:block relative flex-1 xl:w-[600px] aspect-square">
         <h2 className="text-2xl font-bold text-center"></h2>
         <Image src="/img/about-banner-2.png" fill={true} alt="product" />
       </div>
-      <div className="flex-1 sm:w-[600px] p-10 shadow-xl lg:shadow-none">
+      <div className="flex-1 max-w-[600px] p-5 sm:p-10 shadow-xl lg:shadow-none border lg:border-none">
         <div className="text-center text-4xl font-bold underline decoration-wavy">
           Sign In
         </div>
