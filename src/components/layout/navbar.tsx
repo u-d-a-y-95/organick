@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navs = [
   {
@@ -11,15 +13,15 @@ const navs = [
   },
   {
     label: "Pages",
-    url: "/",
+    url: "/pages",
   },
   {
     label: "Projects",
-    url: "/",
+    url: "/projects",
   },
   {
     label: "News",
-    url: "/",
+    url: "/news",
   },
   {
     label: "About",
@@ -28,13 +30,23 @@ const navs = [
 ];
 
 export default function Navbar() {
+  const path = usePathname();
   return (
-    <div className="flex text-primary capitalize justify-center gap-10 font-semibold">
-      {navs.map((nav, index) => (
-        <Link key={index} href={nav.url} className="hover:text-secondary">
-          {nav.label}
-        </Link>
-      ))}
+    <div className="border-b border-secondary">
+      <div className="container mx-auto flex text-primary capitalize font-semibold ">
+        {navs.map((nav, index) => (
+          <Link
+            key={index}
+            href={nav.url}
+            className={`
+            ${
+              path == nav.url ? "border border-b-white text-secondary" : ""
+            }   p-2 px-4 border-secondary hover:text-secondary`}
+          >
+            {nav.label}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
