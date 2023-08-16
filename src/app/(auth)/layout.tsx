@@ -10,7 +10,14 @@ export default function RootLayout({
 }) {
   return (
     <section className="flex justify-center items-center h-screen">
-      {children}
+      <div className="container mx-auto flex text-primary w-full p-5 sm:p-10 justify-center items-center">
+        <div className="flex-1 max-w-[450px] p-10 shadow-xl border min-h-[600px] relative bg-white">
+          {children}
+          <div className="hidden md:block absolute top-16 -left-20 rounded-md rounded-bl-none rounded-br-none bg-primary text-white p-2 px-8 -rotate-90 -z-10">
+            Organick
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
