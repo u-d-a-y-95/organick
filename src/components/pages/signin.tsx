@@ -5,6 +5,11 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useSignInMutation } from "@/hooks/apis/useAuth";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "@/state/slices/auth.slice";
 
 const schema = z.object({
   mobile: z.string().min(11, "enter a valid mobile number"),
@@ -12,6 +17,9 @@ const schema = z.object({
 });
 
 export const SignInForm = () => {
+  const [signin, { data, isLoading, isSuccess }] = useSignInMutation();
+  const dispatch = useDispatch();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -25,8 +33,16 @@ export const SignInForm = () => {
   });
 
   const onsubmit = (data: SigninForm) => {
-    console.log(data);
+    signin(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      dispatch(login(data));
+      router.push("/");
+    }
+  }, [data, dispatch, isSuccess, router]);
+
   return (
     <form onSubmit={handleSubmit(onsubmit)}>
       <div className="mt-16">
@@ -39,7 +55,7 @@ export const SignInForm = () => {
             {...register("mobile")}
           />
           {errors["mobile"] && (
-            <span className="text-red-500 text-sm mt-1">
+            <span className="text-red-500 text-xs mt-1 first-letter:uppercase">
               *{errors["mobile"].message}
             </span>
           )}
@@ -56,7 +72,7 @@ export const SignInForm = () => {
             {...register("password")}
           />
           {errors["password"] && (
-            <span className="text-red-500 text-sm mt-1">
+            <span className="text-red-500 text-xs mt-1 first-letter:uppercase">
               *{errors["password"].message}
             </span>
           )}
