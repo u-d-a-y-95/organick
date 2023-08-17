@@ -7,8 +7,11 @@
   input[type="number"]::-webkit-outer-spin-button {
     @apply appearance-none;
   }
+  
+  input{
+    @apply outline-primary
+  }
 }
 
-.animate-infinite{
-  animation-iteration-count:infinite ;
-}
+
+

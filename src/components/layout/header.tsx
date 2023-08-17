@@ -1,14 +1,16 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./navbar";
 
 import {
   ShoppingCartIcon,
   MagnifyingGlassIcon,
-  HeartIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useAppSelector } from "@/state";
 
 export default function Header() {
+  const { isLogged } = useAppSelector((state) => state.auth);
   return (
     <div className="sticky top-0 bg-white z-10">
       <div className="container mx-auto py-4">
@@ -34,12 +36,14 @@ export default function Header() {
               </div>
               <div className="flex-1">Cart (0)</div>
             </div>
-
-            {/* <div className="bg-primary text-white rounded-full w-8 aspect-square flex justify-center items-center ring ring-offset-2 ring-gray-400"></div> */}
-
-            <div className="bg-primary text-white px-4 p-2 rounded">
-              <Link href="/signin">Sign in</Link>
-            </div>
+            {isLogged && (
+              <div className="bg-primary text-white rounded-full w-8 aspect-square flex justify-center items-center ring ring-offset-2 ring-gray-400"></div>
+            )}
+            {!isLogged && (
+              <div className="bg-primary text-white px-4 p-2 rounded">
+                <Link href="/signin">Sign in</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -25,12 +25,8 @@ export default function SignIn() {
   const [modal, setModal] = useState(false);
   const submitHandler = (data: SignupForm) => {};
   return (
-    <div className="flex  text-primary ">
-      <div className="hidden lg:block relative w-[600px] h-[600px] self-end">
-        <h2 className="text-2xl font-bold text-center"></h2>
-        <Image src="/img/about-banner-2.png" fill={true} alt="product" />
-      </div>
-      <div className="flex-1 sm:w-[600px] p-10 shadow-xl lg:shadow-none">
+    <>
+      <div className="">
         <div className="text-center text-4xl font-bold underline decoration-wavy">
           Sign up
         </div>
@@ -46,20 +42,6 @@ export default function SignIn() {
               {errors["name"] && (
                 <span className="text-red-500 text-sm mt-2">
                   *{errors["name"].message}
-                </span>
-              )}
-            </div>
-            <div className="flex flex-col mt-5">
-              <label className="font-semibold mb-1">Email</label>
-              <input
-                placeholder="Enter your email"
-                className="border p-2"
-                type="email"
-                {...register("email")}
-              />
-              {errors["email"] && (
-                <span className="text-red-500 text-sm mt-2">
-                  *{errors["email"].message}
                 </span>
               )}
             </div>
@@ -127,6 +109,6 @@ export default function SignIn() {
       >
         <Otp />
       </Modal>
-    </div>
+    </>
   );
 }
