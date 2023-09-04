@@ -64,29 +64,83 @@ export default function Home() {
   return (
     <>
       {/* home page banner */}
-      <div
-        style={{
-          background: "#F1EFF0 url('/img/home-banner-2.png')",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-        className="h-[400px] sm:h-[650px] flex justify-center items-center"
-      >
-        <div className="w-[400px]">
-          <h3 className={`${yellowtail.className} text-secondary text-xlx`}>
-            100% Natural Food
-          </h3>
-          <h2 className="text-4xl font-extrabold mt-2">
-            Choose the best healthier way of life
-          </h2>
-          <div className="mt-8">
-            <Button label="Explore Now" className="" />
+      <div className="container mx-auto flex gap-8 my-8">
+        <div className="min-w-[250px] font-semibold">
+          <div className="bg-primary text-white p-3 py-4">All departments</div>
+          <div className="bg-gray-100">
+            <div className="p-3 border-b border-dashed border-primary">
+              Fresh Meats
+            </div>
+            <div className="p-3 border-b border-dashed border-primary">
+              Vegetables
+            </div>
+            <div className="p-3 last:border-0 border-b border-dashed border-primary">
+              Fruits Nuts
+            </div>
+            <div className="p-3 border-b border-dashed border-primary">
+              Fresh Meats
+            </div>
+            <div className="p-3 border-b border-dashed border-primary">
+              Vegetables
+            </div>
+            <div className="p-3 last:border-0 border-b border-dashed border-primary">
+              Fruits Nuts
+            </div>
+            <div className="p-3 border-b border-dashed border-primary">
+              Fresh Meats
+            </div>
+            <div className="p-3 border-b border-dashed border-primary">
+              Vegetables
+            </div>
+            <div className="p-3 last:border-0 border-b border-dashed border-primary">
+              Fruits Nuts
+            </div>
+            <div className="p-3 last:border-0 border-b border-dashed border-primary">
+              Fruits Nuts
+            </div>
           </div>
         </div>
-        <div className="hidden md:block w-[600px] h-full relative">
-          <Image fill={true} src="/img/home-banner-1.png" alt="banner" />
+        <div className="flex-1 h-[550px] flex flex-col gap-8 ">
+          <div className="flex items-center">
+            <select className="border p-3 w-52">
+              <option>Vegetables</option>
+            </select>
+            <input className="flex-1 outline-none border p-3" />
+            <button className="bg-primary text-white px-4 py-3 min-w-[200px]">
+              seacrh
+            </button>
+          </div>
+          <div
+            style={{
+              background: "#F1EFF0 url('/img/home-banner-2.png')",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+            className="flex-1 flex p-10 items-center relative"
+          >
+            <div className="w-[400px]">
+              <h3 className={`${yellowtail.className} text-secondary text-xlx`}>
+                100% Natural Food
+              </h3>
+              <h2 className="text-4xl font-extrabold mt-2">
+                Choose the best healthier way of life
+              </h2>
+              <div className="mt-8">
+                <Button label="Explore Now" className="" />
+              </div>
+            </div>
+            <div className="absolute bottom-0 right-0">
+              <Image
+                width={500}
+                height={500}
+                src="/img/home-banner-1.png"
+                alt="banner"
+              />
+            </div>
+          </div>
         </div>
       </div>
+
       {/* offer banner */}
       <div className="my-16 py-10 flex flex-col md:flex-row justify-center items-center gap-10">
         <OfferCard
@@ -103,65 +157,23 @@ on Vegetables"
         />
       </div>
 
-      <div
-        style={{
-          background: "#F1EFF0",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-        className="h-[600px] flex justify-center items-center"
-      >
-        <div className="hidden md:block w-[600px] h-full relative">
-          <Image fill={true} src="/img/home-banner-1.png" alt="banner" />
-        </div>
-        <div className="w-[400px]">
-          <h3 className={`${yellowtail.className} text-secondary text-xlx`}>
-            About Us
-          </h3>
-          <h2 className="text-4xl font-extrabold mt-2">
-            We Believe in Working Accredited Farmers
-          </h2>
-          <p className="text-primary-dark text-sm font-thin my-3">
-            Simply dummy text of the printing and typesetting industry. Lorem
-            had ceased to been the industrys standard dummy text ever since the
-            1500s, when an unknown printer took a galley.
-          </p>
-          <div className="my-5 flex flex-col gap-4">
-            <div className="flex gap-3 items-center">
-              <div className="relative h-16 w-24">
-                <Image src="/img/card-1.png" fill={true} alt="card" />
-              </div>
-              <div className="flex justify-between flex-col">
-                <h5 className="font-semibold">Organic Foods Only</h5>
-                <p className="text-sm font-thin">
-                  Simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3 items-center">
-              <div className="relative h-16 w-24">
-                <Image src="/img/card-2.png" fill={true} alt="card" />
-              </div>
-              <div className="flex justify-between flex-col">
-                <h5 className="font-semibold">Quality Standards</h5>
-                <p className="text-sm font-thin">
-                  Simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8">
-            <Button label="Shop Now" className="bg-primary text-white" />
-          </div>
-        </div>
-      </div>
-
       {/* products */}
-      <div className="text-center mt-10">
-        <h3 className="text-4xl font-bold my-5">Our Products</h3>
-        <div className="p-5 sm:0 container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 sm:gap-7">
+      <div className="container mx-auto">
+        <h3 className="text-2xl font-bold my-5 border-b-2 border-primary py-2">
+          Featured Products
+        </h3>
+        <div
+          className="container mx-auto
+        mt-8 
+        grid 
+        grid-cols-2 
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4 
+        justify-items-center 
+        gap-4 
+        sm:gap-7"
+        >
           {products.map((product, index) => (
             <ProductCard key={index} {...product} />
           ))}

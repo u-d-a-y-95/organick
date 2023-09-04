@@ -73,23 +73,41 @@ export default function Shop() {
           <div className="mt-10 flex flex-col gap-6">
             <div>
               <p className="font-semibold mb-2">Price</p>
-              <input className="border p-2" placeholder="enter price"/>
+              <input className="border p-2" placeholder="enter price" />
             </div>
             <div className="font-semibold mb-2">
-            <p className="font-semibold mb-2">Categpries</p>
+              <p className="font-semibold mb-2">Categpries</p>
               <div>
                 <div className="flex items-center">
-                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="fruits"/>
-                  <label className="ml-2 font-medium" htmlFor="fruits">Fruits</label>
-               </div>
+                  <input
+                    type="checkbox"
+                    className=" w-4 h-4 checked:bg-secondary text-white checked:text-white"
+                    id="fruits"
+                  />
+                  <label className="ml-2 font-medium" htmlFor="fruits">
+                    Fruits
+                  </label>
+                </div>
                 <div className="flex items-center">
-                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="vegetables"/>
-                  <label className="ml-2 font-medium" htmlFor="vegetables">Vegetables</label>
-               </div>
+                  <input
+                    type="checkbox"
+                    className=" w-4 h-4 checked:bg-secondary text-white checked:text-white"
+                    id="vegetables"
+                  />
+                  <label className="ml-2 font-medium" htmlFor="vegetables">
+                    Vegetables
+                  </label>
+                </div>
                 <div className="flex items-center">
-                  <input type="checkbox" className=" w-4 h-4 checked:bg-secondary text-white checked:text-white" id="nuts"/>
-                  <label className="ml-2 font-medium" htmlFor="nuts">Nuts</label>
-               </div>
+                  <input
+                    type="checkbox"
+                    className=" w-4 h-4 checked:bg-secondary text-white checked:text-white"
+                    id="nuts"
+                  />
+                  <label className="ml-2 font-medium" htmlFor="nuts">
+                    Nuts
+                  </label>
+                </div>
               </div>
             </div>
           </div>
@@ -108,7 +126,7 @@ export default function Shop() {
             <div></div>
           </div>
           <div className="my-5">
-            <div className="sm:0 container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-4 sm:gap-7">
+            <div className="sm:0 container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-items-center gap-4 sm:gap-7">
               {products.map((product, index) => (
                 <ProductCard key={index} {...product} />
               ))}

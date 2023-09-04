@@ -13,22 +13,20 @@ export default function Header() {
   const { isLogged } = useAppSelector((state) => state.auth);
   return (
     <div className="sticky top-0 bg-white z-10">
+      <div className="bg-gray-200 h-14">
+        <div className="container mx-auto ">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div className="container mx-auto py-4">
         <div className="flex justify-between items-center">
           <div>
-            <Image width="100" height="100" src="/img/logo.png" alt="logo" />
+            <Link href="/">
+              <Image width="100" height="100" src="/img/logo.png" alt="logo" />
+            </Link>
           </div>
-          <div className="hidden md:flex flex-1 max-w-[500px] border rounded-full p-2 items-center gap-2">
-            <div className="flex-1 bg-secondary-accent-light w-[200px]">
-              <input
-                placeholder="search anything"
-                className="w-full outline-0 px-2"
-              />
-            </div>
-            <div className="text-white bg-primary rounded-full h-6 w-6 flex justify-center items-center">
-              <MagnifyingGlassIcon className="h-3 w-3" />
-            </div>
-          </div>
+
           <div className="hidden sm:flex gap-5 items-center">
             <div className="flex border rounded-full p-2 items-center gap-2">
               <div className="bg-primary text-white rounded-full w-6 aspect-square flex justify-center items-center">
